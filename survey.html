@@ -28,7 +28,7 @@
     }
 
     html, body {
-      width: 565px;
+      width: 100%;
       height: 100%;
       overflow: hidden;
       background: var(--bg);
@@ -43,7 +43,7 @@
       -webkit-flex-direction: column;
       flex-direction: column;
       height: 100%;
-      width: 565px;
+      width: 100%;
     }
     .page.active {
       display: -webkit-flex;
@@ -920,19 +920,15 @@ function getAnsLabel(qIdx, answerId) {
 }
 
 function submitAll() {
-  // Вызов 1С через window.external или передача через URL — адаптируйте под свою интеграцию
   var payload = {
+    step:      'screen-complete',
+    action:    'Submit',
     requestId: S.request.id,
     employee:  S.employee,
     products:  S.request.products
   };
-  // Для интеграции с 1С раскомментируйте нужную строку:
-  // window.external.notify(JSON.stringify(payload));  // WinForms/WebBrowser
-  // window.location.href = 'e1c://result?' + encodeURIComponent(JSON.stringify(payload));
-  if (typeof window.external !== 'undefined' && window.external.notify) {
-    window.external.notify(JSON.stringify(payload));
-  }
-  showToast('Данные отправлены в 1С: ' + S.request.id);
+  window.location.hash = '#1c-event:JSON:' + encodeURIComponent(JSON.stringify(payload));
+  showToast('Данные отправлены: ' + S.request.id);
 }
 
 function newRequest() {
