@@ -19,16 +19,14 @@
       --radius:       14px;
       --shadow:       0 2px 12px rgba(0,0,0,0.08);
     }
-
     * {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
       margin: 0; padding: 0;
     }
-
     html, body {
-      width: 565px;
+      width: 100%;
       height: 100%;
       overflow: hidden;
       background: var(--bg);
@@ -36,95 +34,60 @@
       -webkit-font-smoothing: antialiased;
       color: var(--text);
     }
-
-    /* ── PAGE SHELL: full-height flex column ── */
     .page {
       display: none;
       -webkit-flex-direction: column;
       flex-direction: column;
       height: 100%;
-      width: 565px;
+      width: 100%;
     }
     .page.active {
       display: -webkit-flex;
       display: flex;
     }
-
-    /* ── HEADER ── */
     .hdr {
-      -webkit-flex-shrink: 0;
-      flex-shrink: 0;
-      background: var(--primary);
-      color: #fff;
+      -webkit-flex-shrink: 0; flex-shrink: 0;
+      background: var(--primary); color: #fff;
       padding: 13px 16px 11px;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
+      display: -webkit-flex; display: flex;
+      -webkit-align-items: center; align-items: center;
+      -webkit-justify-content: space-between; justify-content: space-between;
       -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.18);
       box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
     .hdr-title { font-size: 17px; font-weight: 700; line-height: 1.2; }
     .hdr-sub   { font-size: 12px; opacity: .80; margin-top: 2px; }
     .hdr-badge {
-      background: rgba(255,255,255,.22);
-      border-radius: 20px;
-      padding: 4px 13px;
-      font-size: 14px;
-      font-weight: 700;
-      -webkit-flex-shrink: 0;
-      flex-shrink: 0;
+      background: rgba(255,255,255,.22); border-radius: 20px;
+      padding: 4px 13px; font-size: 14px; font-weight: 700;
+      -webkit-flex-shrink: 0; flex-shrink: 0;
     }
-
-    /* ── PROGRESS BAR ── */
     .pbar { -webkit-flex-shrink: 0; flex-shrink: 0; height: 4px; background: rgba(255,255,255,.25); }
     .pbar-fill {
-      height: 100%;
-      background: #80cfff;
-      -webkit-transition: width .35s ease;
-      transition: width .35s ease;
+      height: 100%; background: #80cfff;
+      -webkit-transition: width .35s ease; transition: width .35s ease;
     }
-
-    /* ── SCROLL AREA ── */
     .scroll {
-      -webkit-flex: 1;
-      flex: 1;
-      overflow-y: auto;
-      overflow-x: hidden;
+      -webkit-flex: 1; flex: 1;
+      overflow-y: auto; overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       padding: 14px 14px 0;
     }
-
-    /* ── BOTTOM NAV (part of normal flow) ── */
     .bot-nav {
-      -webkit-flex-shrink: 0;
-      flex-shrink: 0;
-      background: #fff;
-      border-top: 1px solid var(--border);
+      -webkit-flex-shrink: 0; flex-shrink: 0;
+      background: #fff; border-top: 1px solid var(--border);
       padding: 10px 14px 12px;
-      display: -webkit-flex;
-      display: flex;
-      gap: 10px;
+      display: -webkit-flex; display: flex; gap: 10px;
     }
-
-    /* ── CARD ── */
     .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      -webkit-box-shadow: var(--shadow);
-      box-shadow: var(--shadow);
-      padding: 14px 16px;
-      margin-bottom: 12px;
+      background: var(--card); border-radius: var(--radius);
+      -webkit-box-shadow: var(--shadow); box-shadow: var(--shadow);
+      padding: 14px 16px; margin-bottom: 12px;
     }
     .card-lbl {
-      font-size: 11px; font-weight: 700;
-      letter-spacing: .8px; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
     }
-
-    /* ── DETAIL ROWS ── */
     .drow {
       display: -webkit-flex; display: flex;
       -webkit-justify-content: space-between; justify-content: space-between;
@@ -135,42 +98,27 @@
     .drow:last-child { border-bottom: none; }
     .drow-lbl { color: var(--muted); }
     .drow-val { font-weight: 600; text-align: right; }
-
-    /* ── PRODUCT LIST ── */
     .prod-item {
       display: -webkit-flex; display: flex;
       -webkit-align-items: center; align-items: center;
-      padding: 11px 0; border-bottom: 1px solid var(--border);
-      gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid var(--border); gap: 12px;
     }
     .prod-item:last-child { border-bottom: none; }
-    .prod-dot {
-      width: 11px; height: 11px; border-radius: 50%;
-      background: var(--border); -webkit-flex-shrink: 0; flex-shrink: 0;
-    }
+    .prod-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--border); -webkit-flex-shrink: 0; flex-shrink: 0; }
     .prod-dot.done   { background: var(--success); }
     .prod-dot.active { background: var(--warning); }
     .prod-info { -webkit-flex: 1; flex: 1; min-width: 0; }
     .prod-name { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .prod-sku  { font-size: 12px; color: var(--muted); margin-top: 2px; }
-
-    /* ── BADGES ── */
-    .badge {
-      display: inline-block; padding: 3px 10px; border-radius: 20px;
-      font-size: 12px; font-weight: 700; white-space: nowrap;
-      -webkit-flex-shrink: 0; flex-shrink: 0;
-    }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; -webkit-flex-shrink: 0; flex-shrink: 0; }
     .badge-pend { background: #fff3e0; color: #e65100; }
     .badge-done { background: #e8f5e9; color: #2e7d32; }
-
-    /* ── BUTTONS ── */
     .btn {
       display: block; width: 100%; padding: 18px 16px;
       border: none; border-radius: var(--radius);
       font-size: 17px; font-weight: 700; cursor: pointer;
       text-align: center; font-family: inherit; line-height: 1.2;
-      -webkit-transition: opacity .12s;
-      transition: opacity .12s;
+      -webkit-transition: opacity .12s; transition: opacity .12s;
       -webkit-user-select: none; user-select: none;
     }
     .btn:active   { opacity: .82; }
@@ -181,14 +129,11 @@
     .btn-sm       { padding: 14px 12px; font-size: 16px; }
     .btn-flex     { -webkit-flex: 1; flex: 1; }
     .btn-back     { -webkit-flex: 0 0 44%; flex: 0 0 44%; }
-
-    /* ── CHOICE BUTTONS (text) ── */
     .choice-btn {
       display: -webkit-flex; display: flex;
       -webkit-align-items: center; align-items: center;
-      width: 100%; min-height: 68px;
-      padding: 16px; background: var(--card);
-      border: 2.5px solid var(--border); border-radius: var(--radius);
+      width: 100%; min-height: 68px; padding: 16px;
+      background: var(--card); border: 2.5px solid var(--border); border-radius: var(--radius);
       font-size: 17px; font-weight: 600; cursor: pointer;
       margin-bottom: 10px; font-family: inherit; color: var(--text);
       gap: 14px; text-align: left;
@@ -199,41 +144,29 @@
     .choice-btn.selected { background: #e8f0fe; border-color: var(--primary); color: var(--primary); }
     .choice-btn.warn-sel { background: #fff8e1; border-color: var(--warning); color: #7a4400; }
     .choice-icon { font-size: 22px; -webkit-flex-shrink: 0; flex-shrink: 0; width: 30px; text-align: center; }
-
-    /* ── IMAGE CHOICE GRID ── */
-    .img-grid {
-      display: -webkit-flex; display: flex;
-      -webkit-flex-wrap: wrap; flex-wrap: wrap; gap: 10px;
-    }
+    .img-grid { display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; gap: 10px; }
     .img-btn {
       -webkit-flex: 0 0 calc(50% - 5px); flex: 0 0 calc(50% - 5px);
-      background: var(--card); border: 2.5px solid var(--border);
-      border-radius: var(--radius); padding: 14px 8px;
-      cursor: pointer; display: -webkit-flex; display: flex;
+      background: var(--card); border: 2.5px solid var(--border); border-radius: var(--radius);
+      padding: 14px 8px; cursor: pointer;
+      display: -webkit-flex; display: flex;
       -webkit-flex-direction: column; flex-direction: column;
       -webkit-align-items: center; align-items: center; gap: 10px;
-      font-family: inherit; color: var(--text);
-      font-size: 14px; font-weight: 600; min-height: 148px;
+      font-family: inherit; color: var(--text); font-size: 14px; font-weight: 600; min-height: 148px;
       -webkit-box-shadow: var(--shadow); box-shadow: var(--shadow);
       -webkit-transition: opacity .12s; transition: opacity .12s;
     }
     .img-btn:active   { opacity: .80; }
     .img-btn.selected { background: #e8f0fe; border-color: var(--primary); color: var(--primary); }
-    .img-btn svg      { width: 76px; height: 76px; }
-
-    /* ── AUTH ICON ── */
-    .auth-icon     { text-align: center; padding: 22px 0 14px; }
+    .img-btn svg { width: 76px; height: 76px; }
+    .auth-icon { text-align: center; padding: 22px 0 14px; }
     .auth-icon svg { width: 88px; height: 88px; }
-
-    /* ── SCAN HINT ── */
     .scan-hint {
       background: #e8f0fe; border: 1.5px solid #b8d0f8;
       border-radius: 12px; padding: 16px; text-align: center; margin-bottom: 14px;
     }
     .scan-hint strong { display: block; font-size: 16px; color: var(--primary); margin-bottom: 4px; }
     .scan-hint span   { font-size: 13px; color: #4a6ea8; }
-
-    /* ── INPUT ── */
     .inp {
       width: 100%; padding: 16px 14px;
       border: 2px solid var(--border); border-radius: var(--radius);
@@ -245,95 +178,59 @@
     }
     .inp:focus { border-color: var(--primary); }
     .inp-hint  { text-align: center; font-size: 13px; color: var(--muted); margin-top: 8px; }
-
-    /* ── STEP DOTS ── */
     .step-dots { display: -webkit-flex; display: flex; gap: 6px; -webkit-justify-content: center; justify-content: center; padding: 8px 0 14px; }
     .step-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--border); -webkit-transition: all .2s; transition: all .2s; }
     .step-dot.active { width: 22px; border-radius: 4px; background: var(--primary); }
     .step-dot.done   { background: var(--success); }
-
-    /* ── SUMMARY ROWS ── */
     .sum-item {
       display: -webkit-flex; display: flex;
       -webkit-justify-content: space-between; justify-content: space-between;
       -webkit-align-items: flex-start; align-items: flex-start;
-      padding: 10px 0; border-bottom: 1px solid var(--border);
-      font-size: 14px; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; gap: 12px;
     }
     .sum-item:last-child { border-bottom: none; }
     .sum-q { color: var(--muted); -webkit-flex: 1; flex: 1; }
     .sum-a { font-weight: 700; text-align: right; }
-
-    /* ── COMPLETE ── */
-    .done-icon  { text-align: center; padding: 30px 0 14px; }
+    .done-icon { text-align: center; padding: 30px 0 14px; }
     .done-icon svg { width: 92px; height: 92px; }
     .done-title { text-align: center; font-size: 26px; font-weight: 800; color: var(--success); margin-bottom: 6px; }
     .done-sub   { text-align: center; color: var(--muted); font-size: 15px; }
-
-    /* ── CHIP ── */
-    .chip {
-      display: inline-block; background: #e3f2fd; color: #1565c0;
-      border-radius: 20px; padding: 4px 13px;
-      font-size: 13px; font-weight: 700; margin-bottom: 10px;
-    }
-
-    /* ── TOAST ── */
+    .chip { display: inline-block; background: #e3f2fd; color: #1565c0; border-radius: 20px; padding: 4px 13px; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
     #toast {
-      display: none;
-      position: absolute; bottom: 80px; left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      background: rgba(30,30,40,0.92);
-      color: #fff; padding: 12px 22px; border-radius: 24px;
-      font-size: 15px; font-weight: 600; white-space: nowrap;
-      z-index: 999;
-      -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.28);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+      display: none; position: absolute; bottom: 80px; left: 50%;
+      -webkit-transform: translateX(-50%); transform: translateX(-50%);
+      background: rgba(30,30,40,0.92); color: #fff;
+      padding: 12px 22px; border-radius: 24px;
+      font-size: 15px; font-weight: 600; white-space: nowrap; z-index: 999;
+      -webkit-box-shadow: 0 4px 20px rgba(0,0,0,0.28); box-shadow: 0 4px 20px rgba(0,0,0,0.28);
     }
     #toast.show { display: block; }
   </style>
 </head>
 <body>
-
 <div id="toast"></div>
 
-<!-- PAGE 1 · DETAILS -->
 <div id="pg-details" class="page active">
-  <div class="hdr">
-    <div>
-      <div class="hdr-title">Анкета товара</div>
-      <div class="hdr-sub">Просмотр заявки</div>
-    </div>
-    <div class="hdr-badge" id="d-badge">—</div>
-  </div>
+  <div class="hdr"><div><div class="hdr-title">Анкета товара</div><div class="hdr-sub">Просмотр заявки</div></div><div class="hdr-badge" id="d-badge">—</div></div>
   <div class="pbar"><div class="pbar-fill" style="width:0%"></div></div>
   <div class="scroll">
     <div style="height:12px"></div>
     <div class="card">
       <div class="card-lbl">Информация о заявке</div>
-      <div class="drow"><span class="drow-lbl">Номер</span>   <span class="drow-val" id="d-id">—</span></div>
-      <div class="drow"><span class="drow-lbl">Дата</span>    <span class="drow-val" id="d-date">—</span></div>
-      <div class="drow"><span class="drow-lbl">Клиент</span>  <span class="drow-val" id="d-client">—</span></div>
-      <div class="drow"><span class="drow-lbl">Товаров</span> <span class="drow-val" id="d-count">—</span></div>
-      <div class="drow"><span class="drow-lbl">Статус</span>  <span class="drow-val"><span class="badge badge-pend" id="d-status">В обработке</span></span></div>
+      <div class="drow"><span class="drow-lbl">Номер</span><span class="drow-val" id="d-id">—</span></div>
+      <div class="drow"><span class="drow-lbl">Дата</span><span class="drow-val" id="d-date">—</span></div>
+      <div class="drow"><span class="drow-lbl">Клиент</span><span class="drow-val" id="d-client">—</span></div>
+      <div class="drow"><span class="drow-lbl">Товаров</span><span class="drow-val" id="d-count">—</span></div>
+      <div class="drow"><span class="drow-lbl">Статус</span><span class="drow-val"><span class="badge badge-pend" id="d-status">В обработке</span></span></div>
     </div>
-    <div class="card">
-      <div class="card-lbl">Список товаров</div>
-      <div id="d-products"></div>
-    </div>
+    <div class="card"><div class="card-lbl">Список товаров</div><div id="d-products"></div></div>
     <button class="btn btn-primary" id="start-btn" onclick="startProcess()">Начать обработку →</button>
     <div style="height:16px"></div>
   </div>
 </div>
 
-<!-- PAGE 2 · AUTH -->
 <div id="pg-auth" class="page">
-  <div class="hdr">
-    <div>
-      <div class="hdr-title">Авторизация</div>
-      <div class="hdr-sub">Сканируйте пропуск</div>
-    </div>
-  </div>
+  <div class="hdr"><div><div class="hdr-title">Авторизация</div><div class="hdr-sub">Сканируйте пропуск</div></div></div>
   <div class="pbar"><div class="pbar-fill" style="width:16%"></div></div>
   <div class="scroll">
     <div class="auth-icon">
@@ -346,32 +243,18 @@
         <rect x="52" y="44" width="22" height="4" rx="2" fill="#b3cef5"/>
         <rect x="52" y="52" width="26" height="4" rx="2" fill="#b3cef5"/>
         <rect x="14" y="67" width="72" height="10" rx="3" fill="#1a73e8" opacity=".06"/>
-        <rect x="17" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="22" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="26" y="68" width="3" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="32" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="36" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="41" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="45" y="68" width="3" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="51" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="55" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="60" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="64" y="68" width="3" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="70" y="68" width="2" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="75" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
-        <rect x="79" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="17" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/><rect x="22" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="26" y="68" width="3" height="8" rx="1" fill="#1a73e8"/><rect x="32" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="36" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/><rect x="41" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="45" y="68" width="3" height="8" rx="1" fill="#1a73e8"/><rect x="51" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="55" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/><rect x="60" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="64" y="68" width="3" height="8" rx="1" fill="#1a73e8"/><rect x="70" y="68" width="2" height="8" rx="1" fill="#1a73e8"/>
+        <rect x="75" y="68" width="1.5" height="8" rx="1" fill="#1a73e8"/><rect x="79" y="68" width="2.5" height="8" rx="1" fill="#1a73e8"/>
       </svg>
     </div>
-    <div class="scan-hint">
-      <strong>Поднесите пропуск к сканеру ТСД</strong>
-      <span>Штрихкод или QR-код считается автоматически</span>
-    </div>
-    <div class="card">
-      <div class="card-lbl">Или введите ID вручную</div>
-      <input type="text" id="auth-inp" class="inp" placeholder="EMP-0000"
-        autocomplete="off" autocorrect="off" autocapitalize="characters"
-        oninput="onAuthInput(this.value)"
-        onkeydown="if(event.keyCode===13&&this.value.trim())confirmAuth()">
+    <div class="scan-hint"><strong>Поднесите пропуск к сканеру ТСД</strong><span>Штрихкод или QR-код считается автоматически</span></div>
+    <div class="card"><div class="card-lbl">Или введите ID вручную</div>
+      <input type="text" id="auth-inp" class="inp" placeholder="EMP-0000" autocomplete="off" autocorrect="off" autocapitalize="characters" oninput="onAuthInput(this.value)" onkeydown="if(event.keyCode===13&&this.value.trim())confirmAuth()">
       <div class="inp-hint">Наберите и нажмите Enter или кнопку ниже</div>
     </div>
     <div style="height:8px"></div>
@@ -382,25 +265,14 @@
   </div>
 </div>
 
-<!-- PAGE 3 · SERIES -->
 <div id="pg-series" class="page">
-  <div class="hdr">
-    <div>
-      <div class="hdr-title" id="ser-name">—</div>
-      <div class="hdr-sub">Серийный номер товара</div>
-    </div>
-    <div class="hdr-badge" id="ser-badge">1/1</div>
-  </div>
+  <div class="hdr"><div><div class="hdr-title" id="ser-name">—</div><div class="hdr-sub">Серийный номер товара</div></div><div class="hdr-badge" id="ser-badge">1/1</div></div>
   <div class="pbar"><div class="pbar-fill" id="ser-prog" style="width:30%"></div></div>
   <div class="scroll">
     <div style="height:12px"></div>
     <div class="chip" id="ser-sku">SKU: —</div>
-    <div class="card">
-      <div class="card-lbl">Серийный номер / серия</div>
-      <input type="text" id="ser-inp" class="inp" placeholder="SN / Серия"
-        autocomplete="off" autocorrect="off" autocapitalize="characters"
-        oninput="onSeriesInput(this.value)"
-        onkeydown="if(event.keyCode===13&&this.value.trim())confirmSeries()">
+    <div class="card"><div class="card-lbl">Серийный номер / серия</div>
+      <input type="text" id="ser-inp" class="inp" placeholder="SN / Серия" autocomplete="off" autocorrect="off" autocapitalize="characters" oninput="onSeriesInput(this.value)" onkeydown="if(event.keyCode===13&&this.value.trim())confirmSeries()">
       <div class="inp-hint">Отсканируйте штрихкод товара или введите вручную</div>
     </div>
     <div style="height:8px"></div>
@@ -411,15 +283,8 @@
   </div>
 </div>
 
-<!-- PAGE 4+ · QUESTION -->
 <div id="pg-question" class="page">
-  <div class="hdr">
-    <div>
-      <div class="hdr-title" id="q-prod">—</div>
-      <div class="hdr-sub" id="q-sub">—</div>
-    </div>
-    <div class="hdr-badge" id="q-badge">1/1</div>
-  </div>
+  <div class="hdr"><div><div class="hdr-title" id="q-prod">—</div><div class="hdr-sub" id="q-sub">—</div></div><div class="hdr-badge" id="q-badge">1/1</div></div>
   <div class="pbar"><div class="pbar-fill" id="q-prog" style="width:50%"></div></div>
   <div class="scroll" id="q-scroll">
     <div style="height:10px"></div>
@@ -435,36 +300,20 @@
   </div>
 </div>
 
-<!-- SUMMARY -->
 <div id="pg-summary" class="page">
-  <div class="hdr">
-    <div>
-      <div class="hdr-title" id="sum-prod">—</div>
-      <div class="hdr-sub">Проверьте ответы</div>
-    </div>
-    <div class="hdr-badge" id="sum-badge">1/1</div>
-  </div>
+  <div class="hdr"><div><div class="hdr-title" id="sum-prod">—</div><div class="hdr-sub">Проверьте ответы</div></div><div class="hdr-badge" id="sum-badge">1/1</div></div>
   <div class="pbar"><div class="pbar-fill" id="sum-prog" style="width:92%"></div></div>
   <div class="scroll">
     <div style="height:12px"></div>
-    <div class="card">
-      <div class="card-lbl">Ответы по товару</div>
-      <div id="sum-answers"></div>
-    </div>
+    <div class="card"><div class="card-lbl">Ответы по товару</div><div id="sum-answers"></div></div>
     <button class="btn btn-success" id="sum-next" onclick="confirmProduct()">Подтвердить →</button>
     <button class="btn btn-outline" onclick="editAnswers()" style="margin-top:10px">← Изменить ответы</button>
     <div style="height:16px"></div>
   </div>
 </div>
 
-<!-- COMPLETE -->
 <div id="pg-complete" class="page">
-  <div class="hdr">
-    <div>
-      <div class="hdr-title">Анкета завершена</div>
-      <div class="hdr-sub" id="cmp-req">—</div>
-    </div>
-  </div>
+  <div class="hdr"><div><div class="hdr-title">Анкета завершена</div><div class="hdr-sub" id="cmp-req">—</div></div></div>
   <div class="pbar"><div class="pbar-fill" style="width:100%;background:#80ffb8"></div></div>
   <div class="scroll">
     <div class="done-icon">
@@ -477,10 +326,7 @@
     <div class="done-title">Готово!</div>
     <div class="done-sub" id="cmp-desc">—</div>
     <div class="done-sub" id="cmp-emp" style="margin-top:4px;font-size:13px"></div>
-    <div class="card" style="margin-top:18px">
-      <div class="card-lbl">Итог по заявке</div>
-      <div id="cmp-list"></div>
-    </div>
+    <div class="card" style="margin-top:18px"><div class="card-lbl">Итог по заявке</div><div id="cmp-list"></div></div>
     <button class="btn btn-success" onclick="submitAll()" style="margin-top:4px">Отправить результаты</button>
     <button class="btn btn-outline" onclick="newRequest()" style="margin-top:10px">Новая заявка</button>
     <div style="height:16px"></div>
@@ -489,371 +335,66 @@
 
 <script>
 var PLUG = {
-  us: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<rect x="10" y="6" width="60" height="50" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<rect x="14" y="10" width="52" height="42" rx="7" fill="#fafafa"/>'
-    + '<rect x="23" y="18" width="9" height="20" rx="3" fill="#ccc"/>'
-    + '<rect x="48" y="18" width="9" height="20" rx="3" fill="#ccc"/>'
-    + '<rect x="23" y="40" width="9" height="22" rx="3" fill="#777"/>'
-    + '<rect x="48" y="40" width="9" height="22" rx="3" fill="#777"/>'
-    + '<rect x="34" y="58" width="12" height="14" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '</svg>',
-
-  eu: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<ellipse cx="40" cy="30" rx="30" ry="28" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<ellipse cx="40" cy="30" rx="24" ry="22" fill="#fafafa"/>'
-    + '<rect x="10" y="25" width="7" height="10" rx="2" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/>'
-    + '<rect x="63" y="25" width="7" height="10" rx="2" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/>'
-    + '<circle cx="30" cy="26" r="4.5" fill="#777"/>'
-    + '<rect x="27" y="26" width="6" height="28" rx="3" fill="#777"/>'
-    + '<circle cx="50" cy="26" r="4.5" fill="#777"/>'
-    + '<rect x="47" y="26" width="6" height="28" rx="3" fill="#777"/>'
-    + '<rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '</svg>',
-
-  au: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<rect x="10" y="6" width="60" height="52" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<rect x="14" y="10" width="52" height="44" rx="7" fill="#fafafa"/>'
-    + '<rect x="37" y="11" width="7" height="20" rx="3" fill="#777"/>'
-    + '<rect x="37" y="12" width="7" height="8" rx="2" fill="#bbb"/>'
-    + '<rect x="18" y="28" width="7" height="22" rx="3" fill="#777" transform="rotate(-35 21.5 39)"/>'
-    + '<rect x="54" y="28" width="7" height="22" rx="3" fill="#777" transform="rotate(35 57.5 39)"/>'
-    + '<rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '</svg>',
-
-  cn: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<rect x="10" y="6" width="60" height="52" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<rect x="14" y="10" width="52" height="44" rx="7" fill="#fafafa"/>'
-    + '<rect x="37" y="11" width="7" height="18" rx="3" fill="#777"/>'
-    + '<rect x="37" y="12" width="7" height="7" rx="2" fill="#bbb"/>'
-    + '<rect x="20" y="32" width="7" height="22" rx="3" fill="#777" transform="rotate(-22 23.5 43)"/>'
-    + '<rect x="53" y="32" width="7" height="22" rx="3" fill="#777" transform="rotate(22 56.5 43)"/>'
-    + '<text x="40" y="56" text-anchor="middle" font-size="8" fill="#bbb" font-family="Arial" font-weight="700">GB</text>'
-    + '<rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '</svg>'
+  us: '<svg viewBox="0 0 80 90" fill="none"><rect x="10" y="6" width="60" height="50" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/><rect x="14" y="10" width="52" height="42" rx="7" fill="#fafafa"/><rect x="23" y="18" width="9" height="20" rx="3" fill="#ccc"/><rect x="48" y="18" width="9" height="20" rx="3" fill="#ccc"/><rect x="23" y="40" width="9" height="22" rx="3" fill="#777"/><rect x="48" y="40" width="9" height="22" rx="3" fill="#777"/><rect x="34" y="58" width="12" height="14" rx="4" fill="#999"/><path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/></svg>',
+  eu: '<svg viewBox="0 0 80 90" fill="none"><ellipse cx="40" cy="30" rx="30" ry="28" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/><ellipse cx="40" cy="30" rx="24" ry="22" fill="#fafafa"/><rect x="10" y="25" width="7" height="10" rx="2" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/><rect x="63" y="25" width="7" height="10" rx="2" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/><circle cx="30" cy="26" r="4.5" fill="#777"/><rect x="27" y="26" width="6" height="28" rx="3" fill="#777"/><circle cx="50" cy="26" r="4.5" fill="#777"/><rect x="47" y="26" width="6" height="28" rx="3" fill="#777"/><rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/><path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/></svg>',
+  au: '<svg viewBox="0 0 80 90" fill="none"><rect x="10" y="6" width="60" height="52" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/><rect x="14" y="10" width="52" height="44" rx="7" fill="#fafafa"/><rect x="37" y="11" width="7" height="20" rx="3" fill="#777"/><rect x="37" y="12" width="7" height="8" rx="2" fill="#bbb"/><rect x="18" y="28" width="7" height="22" rx="3" fill="#777" transform="rotate(-35 21.5 39)"/><rect x="54" y="28" width="7" height="22" rx="3" fill="#777" transform="rotate(35 57.5 39)"/><rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/><path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/></svg>',
+  cn: '<svg viewBox="0 0 80 90" fill="none"><rect x="10" y="6" width="60" height="52" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/><rect x="14" y="10" width="52" height="44" rx="7" fill="#fafafa"/><rect x="37" y="11" width="7" height="18" rx="3" fill="#777"/><rect x="37" y="12" width="7" height="7" rx="2" fill="#bbb"/><rect x="20" y="32" width="7" height="22" rx="3" fill="#777" transform="rotate(-22 23.5 43)"/><rect x="53" y="32" width="7" height="22" rx="3" fill="#777" transform="rotate(22 56.5 43)"/><text x="40" y="56" text-anchor="middle" font-size="8" fill="#bbb" font-family="Arial" font-weight="700">GB</text><rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/><path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/></svg>'
 };
-
 var S = {
-  request: {
-    id: 'РЗ-2024-0847',
-    date: '24.05.2026',
-    client: 'ООО "Техника Плюс"',
+  request: { id: 'РЗ-2024-0847', date: '24.05.2026', client: 'ООО "Техника Плюс"',
     products: [
-      { id: 1, name: 'Apple iPhone 15 Pro',  sku: 'IPH15PRO-256-BK', series: null, answers: {}, status: 'pending' },
-      { id: 2, name: 'Samsung Galaxy S24',    sku: 'SAM-S24-128-GR',  series: null, answers: {}, status: 'pending' },
-      { id: 3, name: 'Apple MacBook Air M3',  sku: 'MBA-M3-256-SL',   series: null, answers: {}, status: 'pending' }
+      { id:1, name:'Apple iPhone 15 Pro',  sku:'IPH15PRO-256-BK', series:null, answers:{}, status:'pending' },
+      { id:2, name:'Samsung Galaxy S24',    sku:'SAM-S24-128-GR',  series:null, answers:{}, status:'pending' },
+      { id:3, name:'Apple MacBook Air M3',  sku:'MBA-M3-256-SL',   series:null, answers:{}, status:'pending' }
     ]
   },
-  employee: null,
-  prodIdx: 0,
-  qIdx:    0,
-  sel:     null,
-
-  questions: [
-    {
-      id: 'plug_type',
-      text: 'Тип вилки',
-      type: 'image',
-      options: [
-        { id: 'us', label: 'Американская'  },
-        { id: 'eu', label: 'Европейская'   },
-        { id: 'au', label: 'Австралийская' },
-        { id: 'cn', label: 'Китайская'     }
-      ]
-    },
-    {
-      id: 'packaging',
-      text: 'Запакован ли товар?',
-      type: 'choice',
-      warn: 'not_found',
-      icons: { packed: '📦', unpacked: '📬', not_found: '🔍' },
-      options: [
-        { id: 'packed',    label: 'Запакован'              },
-        { id: 'unpacked',  label: 'Распакован'             },
-        { id: 'not_found', label: 'Не удалось найти товар' }
-      ]
-    },
-    {
-      id: 'keyboard',
-      text: 'Гравировка клавиатуры',
-      type: 'choice',
-      icons: { cyrillic: 'Яя', latin: 'Aa', polish: 'Ąą' },
-      options: [
-        { id: 'cyrillic', label: 'Кириллица' },
-        { id: 'latin',    label: 'Латиница'  },
-        { id: 'polish',   label: 'Польская'  }
-      ]
-    }
+  employee:null, prodIdx:0, qIdx:0, sel:null,
+  questions:[
+    { id:'plug_type', text:'Тип вилки', type:'image',
+      options:[{id:'us',label:'Американская'},{id:'eu',label:'Европейская'},{id:'au',label:'Австралийская'},{id:'cn',label:'Китайская'}] },
+    { id:'packaging', text:'Запакован ли товар?', type:'choice', warn:'not_found',
+      icons:{packed:'📦',unpacked:'📬',not_found:'🔍'},
+      options:[{id:'packed',label:'Запакован'},{id:'unpacked',label:'Распакован'},{id:'not_found',label:'Не удалось найти товар'}] },
+    { id:'keyboard', text:'Гравировка клавиатуры', type:'choice',
+      icons:{cyrillic:'Яя',latin:'Aa',polish:'Ąą'},
+      options:[{id:'cyrillic',label:'Кириллица'},{id:'latin',label:'Латиница'},{id:'polish',label:'Польская'}] }
   ]
 };
-
-var _toastTimer = null;
-function showToast(msg) {
-  var el = document.getElementById('toast');
-  el.textContent = msg;
-  el.className = 'show';
-  if (_toastTimer) clearTimeout(_toastTimer);
-  _toastTimer = setTimeout(function() { el.className = ''; }, 2800);
+var _tt=null;
+function showToast(m){var e=document.getElementById('toast');e.textContent=m;e.className='show';if(_tt)clearTimeout(_tt);_tt=setTimeout(function(){e.className='';},2800);}
+function goTo(pg){var ps=document.querySelectorAll('.page');for(var i=0;i<ps.length;i++)ps[i].classList.remove('active');document.getElementById('pg-'+pg).classList.add('active');var sc=document.querySelector('#pg-'+pg+' .scroll');if(sc)sc.scrollTop=0;}
+function renderDetails(){
+  var r=S.request;
+  document.getElementById('d-badge').textContent='#'+r.id.split('-').pop();
+  document.getElementById('d-id').textContent=r.id;
+  document.getElementById('d-date').textContent=r.date;
+  document.getElementById('d-client').textContent=r.client;
+  document.getElementById('d-count').textContent=r.products.length+' шт.';
+  var ad=r.products.every(function(p){return p.status==='done';});
+  var el=document.getElementById('d-status');
+  if(ad){el.textContent='✓ Завершено';el.className='badge badge-done';}else{el.textContent='В обработке';el.className='badge badge-pend';}
+  var h='';for(var i=0;i<r.products.length;i++){var p=r.products[i];var d=p.status==='done'?'done':'';h+='<div class="prod-item"><div class="prod-dot '+d+'"></div><div class="prod-info"><div class="prod-name">'+p.name+'</div><div class="prod-sku">'+p.sku+'</div></div><span class="badge '+(p.status==='done'?'badge-done':'badge-pend')+'">'+(p.status==='done'?'✓ Готово':'Ожидает')+'</span></div>';}
+  document.getElementById('d-products').innerHTML=h;
+  var b=document.getElementById('start-btn');b.textContent=ad?'✓ Все обработаны':'Начать обработку →';b.disabled=ad;
 }
-
-function goTo(pg) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  document.getElementById('pg-' + pg).classList.add('active');
-  var sc = document.querySelector('#pg-' + pg + ' .scroll');
-  if (sc) sc.scrollTop = 0;
-}
-
-function renderDetails() {
-  var r = S.request;
-  document.getElementById('d-badge').textContent  = '#' + r.id.split('-').pop();
-  document.getElementById('d-id').textContent     = r.id;
-  document.getElementById('d-date').textContent   = r.date;
-  document.getElementById('d-client').textContent = r.client;
-  document.getElementById('d-count').textContent  = r.products.length + ' шт.';
-  var allDone = r.products.every(function(p) { return p.status === 'done'; });
-  var el = document.getElementById('d-status');
-  if (allDone) { el.textContent = '✓ Завершено'; el.className = 'badge badge-done'; }
-  else         { el.textContent = 'В обработке'; el.className = 'badge badge-pend'; }
-  var html = '';
-  for (var i = 0; i < r.products.length; i++) {
-    var p = r.products[i];
-    var dot = p.status === 'done' ? 'done' : '';
-    html += '<div class="prod-item">'
-          +   '<div class="prod-dot ' + dot + '"></div>'
-          +   '<div class="prod-info">'
-          +     '<div class="prod-name">' + p.name + '</div>'
-          +     '<div class="prod-sku">' + p.sku + '</div>'
-          +   '</div>'
-          +   '<span class="badge ' + (p.status === 'done' ? 'badge-done' : 'badge-pend') + '">'
-          +     (p.status === 'done' ? '✓ Готово' : 'Ожидает')
-          +   '</span>'
-          + '</div>';
-  }
-  document.getElementById('d-products').innerHTML = html;
-  var btn = document.getElementById('start-btn');
-  btn.textContent = allDone ? '✓ Все обработаны' : 'Начать обработку →';
-  btn.disabled = allDone;
-}
-
-function startProcess() {
-  var idx = -1;
-  for (var i = 0; i < S.request.products.length; i++) {
-    if (S.request.products[i].status !== 'done') { idx = i; break; }
-  }
-  if (idx < 0) return;
-  S.prodIdx = idx;
-  goTo('auth');
-  setTimeout(function() { document.getElementById('auth-inp').focus(); }, 120);
-}
-
-function onAuthInput(v) {
-  S.employee = v.trim() || null;
-  document.getElementById('auth-next').disabled = !S.employee;
-}
-
-function confirmAuth() {
-  if (!S.employee) return;
-  goTo('series');
-  renderSeries();
-}
-
-function renderSeries() {
-  var p   = S.request.products[S.prodIdx];
-  var tot = S.request.products.length;
-  document.getElementById('ser-name').textContent  = p.name;
-  document.getElementById('ser-badge').textContent = (S.prodIdx + 1) + '/' + tot;
-  document.getElementById('ser-sku').textContent   = 'SKU: ' + p.sku;
-  document.getElementById('ser-prog').style.width  = (25 + (S.prodIdx / tot) * 18) + '%';
-  var inp = document.getElementById('ser-inp');
-  inp.value = p.series || '';
-  document.getElementById('ser-next').disabled = !p.series;
-  setTimeout(function() { inp.focus(); }, 120);
-}
-
-function onSeriesInput(v) {
-  S.request.products[S.prodIdx].series = v.trim() || null;
-  document.getElementById('ser-next').disabled = !S.request.products[S.prodIdx].series;
-}
-
-function confirmSeries() {
-  if (!S.request.products[S.prodIdx].series) return;
-  S.qIdx = 0; S.sel = null;
-  goTo('question');
-  renderQ();
-}
-
-function renderQ() {
-  var q    = S.questions[S.qIdx];
-  var p    = S.request.products[S.prodIdx];
-  var tot  = S.questions.length;
-  var ptot = S.request.products.length;
-  document.getElementById('q-prod').textContent    = p.name;
-  document.getElementById('q-sub').textContent     = 'Вопрос ' + (S.qIdx + 1) + ' из ' + tot;
-  document.getElementById('q-badge').textContent   = (S.prodIdx + 1) + '/' + ptot;
-  document.getElementById('q-counter').textContent = 'Вопрос ' + (S.qIdx + 1) + ' из ' + tot;
-  document.getElementById('q-text').textContent    = q.text;
-  var base = (S.prodIdx * tot + S.qIdx) / (ptot * tot);
-  document.getElementById('q-prog').style.width = (45 + base * 45) + '%';
-  var dots = '';
-  for (var i = 0; i < S.questions.length; i++) {
-    var cls = i < S.qIdx ? 'done' : (i === S.qIdx ? 'active' : '');
-    dots += '<div class="step-dot ' + cls + '"></div>';
-  }
-  document.getElementById('q-steps').innerHTML = dots;
-  S.sel = p.answers[q.id] || null;
-  renderOpts(q);
-  document.getElementById('q-back').textContent  = S.qIdx === 0 ? '← Серия' : '← Назад';
-  var nb = document.getElementById('q-next');
-  nb.disabled    = !S.sel;
-  nb.textContent = S.qIdx === tot - 1 ? 'Итог →' : 'Далее →';
-}
-
-function renderOpts(q) {
-  var html = '';
-  if (q.type === 'image') {
-    html = '<div class="img-grid">';
-    for (var i = 0; i < q.options.length; i++) {
-      var opt = q.options[i];
-      html += '<button class="img-btn ' + (S.sel === opt.id ? 'selected' : '') + '" onclick="pickAnswer(\'' + opt.id + '\')">' + PLUG[opt.id] + '<span>' + opt.label + '</span></button>';
-    }
-    html += '</div>';
-  } else {
-    for (var j = 0; j < q.options.length; j++) {
-      var o    = q.options[j];
-      var isel = S.sel === o.id;
-      var cls  = isel ? (q.warn === o.id ? 'warn-sel' : 'selected') : '';
-      var icon = (q.icons && q.icons[o.id]) ? q.icons[o.id] : '';
-      html += '<button class="choice-btn ' + cls + '" onclick="pickAnswer(\'' + o.id + '\')">' + '<span class="choice-icon">' + icon + '</span>' + o.label + '</button>';
-    }
-  }
-  document.getElementById('q-opts').innerHTML = html;
-}
-
-function pickAnswer(id) {
-  var q = S.questions[S.qIdx];
-  S.sel = id;
-  S.request.products[S.prodIdx].answers[q.id] = id;
-  renderOpts(q);
-  document.getElementById('q-next').disabled = false;
-}
-
-function nextQ() {
-  if (!S.sel) return;
-  if (S.qIdx < S.questions.length - 1) {
-    S.qIdx++; S.sel = null; renderQ();
-  } else {
-    renderSummary(); goTo('summary');
-  }
-  var sc = document.getElementById('q-scroll');
-  if (sc) sc.scrollTop = 0;
-}
-
-function prevQ() {
-  if (S.qIdx > 0) { S.qIdx--; renderQ(); }
-  else             { goTo('series'); renderSeries(); }
-}
-
-function renderSummary() {
-  var p    = S.request.products[S.prodIdx];
-  var ptot = S.request.products.length;
-  document.getElementById('sum-prod').textContent  = p.name;
-  document.getElementById('sum-badge').textContent = (S.prodIdx + 1) + '/' + ptot;
-  document.getElementById('sum-prog').style.width  = (90 + (S.prodIdx / ptot) * 8) + '%';
-  var html = '';
-  for (var i = 0; i < S.questions.length; i++) {
-    var q   = S.questions[i];
-    var ans = null;
-    for (var j = 0; j < q.options.length; j++) {
-      if (q.options[j].id === p.answers[q.id]) { ans = q.options[j]; break; }
-    }
-    html += '<div class="sum-item"><span class="sum-q">' + q.text + '</span><span class="sum-a">' + (ans ? ans.label : '—') + '</span></div>';
-  }
-  document.getElementById('sum-answers').innerHTML = html;
-  var isLast = S.prodIdx === ptot - 1;
-  document.getElementById('sum-next').textContent = isLast ? '✓ Завершить анкету' : 'Следующий товар →';
-}
-
-function editAnswers() {
-  S.qIdx = S.questions.length - 1;
-  goTo('question'); renderQ();
-}
-
-function confirmProduct() {
-  S.request.products[S.prodIdx].status = 'done';
-  renderDetails();
-  var next = -1;
-  for (var i = S.prodIdx + 1; i < S.request.products.length; i++) {
-    if (S.request.products[i].status !== 'done') { next = i; break; }
-  }
-  if (next !== -1) {
-    S.prodIdx = next; S.qIdx = 0; S.sel = null;
-    goTo('series'); renderSeries();
-  } else {
-    renderComplete(); goTo('complete');
-  }
-}
-
-function renderComplete() {
-  var r   = S.request;
-  var tot = r.products.length;
-  document.getElementById('cmp-req').textContent  = r.id;
-  document.getElementById('cmp-desc').textContent = 'Обработано: ' + tot + ' из ' + tot + ' товаров';
-  document.getElementById('cmp-emp').textContent  = 'Сотрудник: ' + (S.employee || '—');
-  var html = '';
-  for (var i = 0; i < r.products.length; i++) {
-    var p     = r.products[i];
-    var plugA = getAnsLabel(0, p.answers.plug_type);
-    var packA = getAnsLabel(1, p.answers.packaging);
-    var kbA   = getAnsLabel(2, p.answers.keyboard);
-    html += '<div class="sum-item" style="display:block;padding:12px 0">'
-          + '<div style="display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;align-items:center">'
-          + '<div><div style="font-weight:700;font-size:14px">' + p.name + '</div>'
-          + '<div style="font-size:12px;color:var(--muted)">SN: ' + (p.series || '—') + ' &nbsp;·&nbsp; ' + p.sku + '</div></div>'
-          + '<span class="badge badge-done">✓</span></div>'
-          + '<div style="margin-top:6px;font-size:13px;color:var(--muted)">Вилка: <b>' + plugA + '</b> &nbsp;·&nbsp; Упак.: <b>' + packA + '</b> &nbsp;·&nbsp; Клав.: <b>' + kbA + '</b></div>'
-          + '</div>';
-  }
-  document.getElementById('cmp-list').innerHTML = html;
-}
-
-function getAnsLabel(qIdx, answerId) {
-  var opts = S.questions[qIdx].options;
-  for (var i = 0; i < opts.length; i++) {
-    if (opts[i].id === answerId) return opts[i].label;
-  }
-  return '—';
-}
-
-function submitAll() {
-  var payload = { requestId: S.request.id, employee: S.employee, products: S.request.products };
-  if (typeof window.external !== 'undefined' && window.external.notify) {
-    window.external.notify(JSON.stringify(payload));
-  }
-  showToast('Данные отправлены: ' + S.request.id);
-}
-
-function newRequest() {
-  for (var i = 0; i < S.request.products.length; i++) {
-    S.request.products[i].status  = 'pending';
-    S.request.products[i].series  = null;
-    S.request.products[i].answers = {};
-  }
-  S.prodIdx = 0; S.qIdx = 0; S.sel = null; S.employee = null;
-  document.getElementById('auth-inp').value = '';
-  document.getElementById('auth-next').disabled = true;
-  renderDetails();
-  goTo('details');
-}
-
+function startProcess(){var x=-1;for(var i=0;i<S.request.products.length;i++){if(S.request.products[i].status!=='done'){x=i;break;}}if(x<0)return;S.prodIdx=x;goTo('auth');setTimeout(function(){document.getElementById('auth-inp').focus();},120);}
+function onAuthInput(v){S.employee=v.trim()||null;document.getElementById('auth-next').disabled=!S.employee;}
+function confirmAuth(){if(!S.employee)return;goTo('series');renderSeries();}
+function renderSeries(){var p=S.request.products[S.prodIdx];var t=S.request.products.length;document.getElementById('ser-name').textContent=p.name;document.getElementById('ser-badge').textContent=(S.prodIdx+1)+'/'+t;document.getElementById('ser-sku').textContent='SKU: '+p.sku;document.getElementById('ser-prog').style.width=(25+(S.prodIdx/t)*18)+'%';var i=document.getElementById('ser-inp');i.value=p.series||'';document.getElementById('ser-next').disabled=!p.series;setTimeout(function(){i.focus();},120);}
+function onSeriesInput(v){S.request.products[S.prodIdx].series=v.trim()||null;document.getElementById('ser-next').disabled=!S.request.products[S.prodIdx].series;}
+function confirmSeries(){if(!S.request.products[S.prodIdx].series)return;S.qIdx=0;S.sel=null;goTo('question');renderQ();}
+function renderQ(){var q=S.questions[S.qIdx];var p=S.request.products[S.prodIdx];var t=S.questions.length;var pt=S.request.products.length;document.getElementById('q-prod').textContent=p.name;document.getElementById('q-sub').textContent='Вопрос '+(S.qIdx+1)+' из '+t;document.getElementById('q-badge').textContent=(S.prodIdx+1)+'/'+pt;document.getElementById('q-counter').textContent='Вопрос '+(S.qIdx+1)+' из '+t;document.getElementById('q-text').textContent=q.text;var b=(S.prodIdx*t+S.qIdx)/(pt*t);document.getElementById('q-prog').style.width=(45+b*45)+'%';var ds='';for(var i=0;i<S.questions.length;i++){var c=i<S.qIdx?'done':(i===S.qIdx?'active':'');ds+='<div class="step-dot '+c+'"></div>';}document.getElementById('q-steps').innerHTML=ds;S.sel=p.answers[q.id]||null;renderOpts(q);document.getElementById('q-back').textContent=S.qIdx===0?'← Серия':'← Назад';var nb=document.getElementById('q-next');nb.disabled=!S.sel;nb.textContent=S.qIdx===t-1?'Итог →':'Далее →';}
+function renderOpts(q){var h='';if(q.type==='image'){h='<div class="img-grid">';for(var i=0;i<q.options.length;i++){var o=q.options[i];h+='<button class="img-btn '+(S.sel===o.id?'selected':''+'" onclick="pickAnswer(\''+o.id+'\')">')+PLUG[o.id]+'<span>'+o.label+'</span></button>';}h+='</div>';}else{for(var j=0;j<q.options.length;j++){var o2=q.options[j];var ic=q.warn===o2.id&&S.sel===o2.id?'warn-sel':(S.sel===o2.id?'selected':'');var ico=(q.icons&&q.icons[o2.id])?q.icons[o2.id]:'';h+='<button class="choice-btn '+ic+'" onclick="pickAnswer(\''+o2.id+'\')">'+'<span class="choice-icon">'+ico+'</span>'+o2.label+'</button>';}}document.getElementById('q-opts').innerHTML=h;}
+function pickAnswer(id){var q=S.questions[S.qIdx];S.sel=id;S.request.products[S.prodIdx].answers[q.id]=id;renderOpts(q);document.getElementById('q-next').disabled=false;}
+function nextQ(){if(!S.sel)return;if(S.qIdx<S.questions.length-1){S.qIdx++;S.sel=null;renderQ();}else{renderSummary();goTo('summary');}var sc=document.getElementById('q-scroll');if(sc)sc.scrollTop=0;}
+function prevQ(){if(S.qIdx>0){S.qIdx--;renderQ();}else{goTo('series');renderSeries();}}
+function renderSummary(){var p=S.request.products[S.prodIdx];var pt=S.request.products.length;document.getElementById('sum-prod').textContent=p.name;document.getElementById('sum-badge').textContent=(S.prodIdx+1)+'/'+pt;document.getElementById('sum-prog').style.width=(90+(S.prodIdx/pt)*8)+'%';var h='';for(var i=0;i<S.questions.length;i++){var q=S.questions[i];var a=null;for(var j=0;j<q.options.length;j++){if(q.options[j].id===p.answers[q.id]){a=q.options[j];break;}}h+='<div class="sum-item"><span class="sum-q">'+q.text+'</span><span class="sum-a">'+(a?a.label:'—')+'</span></div>';}document.getElementById('sum-answers').innerHTML=h;var il=S.prodIdx===pt-1;document.getElementById('sum-next').textContent=il?'✓ Завершить анкету':'Следующий товар →';}
+function editAnswers(){S.qIdx=S.questions.length-1;goTo('question');renderQ();}
+function confirmProduct(){S.request.products[S.prodIdx].status='done';renderDetails();var nx=-1;for(var i=S.prodIdx+1;i<S.request.products.length;i++){if(S.request.products[i].status!=='done'){nx=i;break;}}if(nx!==-1){S.prodIdx=nx;S.qIdx=0;S.sel=null;goTo('series');renderSeries();}else{renderComplete();goTo('complete');}}
+function renderComplete(){var r=S.request;var t=r.products.length;document.getElementById('cmp-req').textContent=r.id;document.getElementById('cmp-desc').textContent='Обработано: '+t+' из '+t+' товаров';document.getElementById('cmp-emp').textContent='Сотрудник: '+(S.employee||'—');var h='';for(var i=0;i<r.products.length;i++){var p=r.products[i];var pa=gl(0,p.answers.plug_type);var pk=gl(1,p.answers.packaging);var kb=gl(2,p.answers.keyboard);h+='<div class="sum-item" style="display:block;padding:12px 0"><div style="display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;align-items:center"><div><div style="font-weight:700;font-size:14px">'+p.name+'</div><div style="font-size:12px;color:var(--muted)">SN: '+(p.series||'—')+' &nbsp;·&nbsp; '+p.sku+'</div></div><span class="badge badge-done">✓</span></div><div style="margin-top:6px;font-size:13px;color:var(--muted)">Вилка: <b>'+pa+'</b> &nbsp;·&nbsp; Упак.: <b>'+pk+'</b> &nbsp;·&nbsp; Клав.: <b>'+kb+'</b></div></div>';}document.getElementById('cmp-list').innerHTML=h;}
+function gl(qi,aid){var o=S.questions[qi].options;for(var i=0;i<o.length;i++){if(o[i].id===aid)return o[i].label;}return '—';}
+function submitAll(){var payload={step:'screen-complete',action:'Submit',requestId:S.request.id,employee:S.employee,products:S.request.products};window.location.hash='#1c-event:JSON:'+encodeURIComponent(JSON.stringify(payload));showToast('Данные отправлены: '+S.request.id);}
+function newRequest(){for(var i=0;i<S.request.products.length;i++){S.request.products[i].status='pending';S.request.products[i].series=null;S.request.products[i].answers={};}S.prodIdx=0;S.qIdx=0;S.sel=null;S.employee=null;document.getElementById('auth-inp').value='';document.getElementById('auth-next').disabled=true;renderDetails();goTo('details');}
 renderDetails();
 </script>
 </body>
