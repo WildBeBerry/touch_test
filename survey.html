@@ -219,7 +219,7 @@
     }
     .img-btn:active   { opacity: .80; }
     .img-btn.selected { background: #e8f0fe; border-color: var(--primary); color: var(--primary); }
-    .img-btn svg      { width: 76px; height: 76px; }
+    .img-btn svg      { width: 76px; height: auto; }
 
     /* ── AUTH ICON ── */
     .auth-icon     { text-align: center; padding: 22px 0 14px; }
@@ -519,55 +519,59 @@
 // PLUG SVGs
 // ════════════════════════════════════
 var PLUG = {
-  us: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<rect x="10" y="6" width="60" height="50" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<rect x="14" y="10" width="52" height="42" rx="7" fill="#fafafa"/>'
-    + '<rect x="23" y="18" width="9" height="20" rx="3" fill="#ccc"/>'
-    + '<rect x="48" y="18" width="9" height="20" rx="3" fill="#ccc"/>'
-    + '<rect x="23" y="40" width="9" height="22" rx="3" fill="#777"/>'
-    + '<rect x="48" y="40" width="9" height="22" rx="3" fill="#777"/>'
-    + '<rect x="34" y="58" width="12" height="14" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
+  // US (Type A/B) — американская: 2 плоских параллельных штырька + заземление
+  us: '<svg viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<rect x="10" y="6" width="140" height="108" rx="18" fill="#d0d0d0" stroke="#909090" stroke-width="3"/>'
+    + '<rect x="18" y="14" width="124" height="92" rx="13" fill="#f2f2f2" stroke="#c0c0c0" stroke-width="2"/>'
+    + '<rect x="48" y="32" width="16" height="38" rx="7" fill="#2a2a2a"/>'
+    + '<rect x="96" y="32" width="16" height="38" rx="7" fill="#2a2a2a"/>'
+    + '<path d="M68 88 Q80 76 92 88" stroke="#2a2a2a" stroke-width="7" fill="none" stroke-linecap="round"/>'
+    + '<ellipse cx="80" cy="160" rx="46" ry="28" fill="#d0d0d0" stroke="#909090" stroke-width="2.5"/>'
+    + '<ellipse cx="80" cy="158" rx="40" ry="22" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1.5"/>'
+    + '<rect x="57" y="118" width="14" height="38" rx="5" fill="#a8a8a8" stroke="#808080" stroke-width="1.5"/>'
+    + '<rect x="89" y="118" width="14" height="38" rx="5" fill="#a8a8a8" stroke="#808080" stroke-width="1.5"/>'
     + '</svg>',
 
-  eu: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<ellipse cx="40" cy="30" rx="30" ry="28" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<ellipse cx="40" cy="30" rx="24" ry="22" fill="#fafafa"/>'
-    + '<rect x="10" y="25" width="7" height="10" rx="2" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/>'
-    + '<rect x="63" y="25" width="7" height="10" rx="2" fill="#c8c8c8" stroke="#b0b0b0" stroke-width="1"/>'
-    + '<circle cx="30" cy="26" r="4.5" fill="#777"/>'
-    + '<rect x="27" y="26" width="6" height="28" rx="3" fill="#777"/>'
-    + '<circle cx="50" cy="26" r="4.5" fill="#777"/>'
-    + '<rect x="47" y="26" width="6" height="28" rx="3" fill="#777"/>'
-    + '<rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
+  // EU (Type F/Schuko) — европейская: 2 круглых штырька, круглая розетка
+  eu: '<svg viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<rect x="10" y="6" width="140" height="112" rx="18" fill="#d0d0d0" stroke="#909090" stroke-width="3"/>'
+    + '<circle cx="80" cy="62" r="48" fill="#f2f2f2" stroke="#c0c0c0" stroke-width="2"/>'
+    + '<rect x="10" y="52" width="20" height="20" rx="4" fill="#c0c0c0" stroke="#909090" stroke-width="1.5"/>'
+    + '<rect x="130" y="52" width="20" height="20" rx="4" fill="#c0c0c0" stroke="#909090" stroke-width="1.5"/>'
+    + '<circle cx="60" cy="62" r="10" fill="#2a2a2a"/>'
+    + '<circle cx="100" cy="62" r="10" fill="#2a2a2a"/>'
+    + '<circle cx="80" cy="160" r="44" fill="#d0d0d0" stroke="#909090" stroke-width="2.5"/>'
+    + '<circle cx="80" cy="158" r="38" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1.5"/>'
+    + '<rect x="57" y="116" width="14" height="40" rx="7" fill="#a8a8a8" stroke="#808080" stroke-width="1.5"/>'
+    + '<rect x="89" y="116" width="14" height="40" rx="7" fill="#a8a8a8" stroke="#808080" stroke-width="1.5"/>'
     + '</svg>',
 
-  au: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<rect x="10" y="6" width="60" height="52" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<rect x="14" y="10" width="52" height="44" rx="7" fill="#fafafa"/>'
-    + '<rect x="37" y="11" width="7" height="20" rx="3" fill="#777"/>'
-    + '<rect x="37" y="12" width="7" height="8" rx="2" fill="#bbb"/>'
-    + '<rect x="18" y="28" width="7" height="22" rx="3" fill="#777" transform="rotate(-35 21.5 39)"/>'
-    + '<rect x="54" y="28" width="7" height="22" rx="3" fill="#777" transform="rotate(35 57.5 39)"/>'
-    + '<rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
+  // AU (Type I) — австралийская: 2 плоских штырька под углом + заземление вертикально
+  au: '<svg viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<rect x="10" y="6" width="140" height="108" rx="18" fill="#d0d0d0" stroke="#909090" stroke-width="3"/>'
+    + '<rect x="18" y="14" width="124" height="92" rx="13" fill="#f2f2f2" stroke="#c0c0c0" stroke-width="2"/>'
+    + '<rect x="42" y="24" width="14" height="32" rx="5" fill="#2a2a2a" transform="rotate(-30 49 40)"/>'
+    + '<rect x="104" y="24" width="14" height="32" rx="5" fill="#2a2a2a" transform="rotate(30 111 40)"/>'
+    + '<rect x="73" y="68" width="14" height="24" rx="5" fill="#2a2a2a"/>'
+    + '<ellipse cx="80" cy="162" rx="46" ry="26" fill="#d0d0d0" stroke="#909090" stroke-width="2.5"/>'
+    + '<ellipse cx="80" cy="160" rx="40" ry="20" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1.5"/>'
+    + '<rect x="42" y="120" width="12" height="36" rx="4" fill="#a8a8a8" stroke="#808080" stroke-width="1.5" transform="rotate(-25 48 138)"/>'
+    + '<rect x="106" y="120" width="12" height="36" rx="4" fill="#a8a8a8" stroke="#808080" stroke-width="1.5" transform="rotate(25 112 138)"/>'
+    + '<rect x="74" y="132" width="12" height="28" rx="4" fill="#a8a8a8" stroke="#808080" stroke-width="1.5"/>'
     + '</svg>',
 
-  cn: '<svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">'
-    + '<rect x="10" y="6" width="60" height="52" rx="10" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1.5"/>'
-    + '<rect x="14" y="10" width="52" height="44" rx="7" fill="#fafafa"/>'
-    + '<rect x="37" y="11" width="7" height="18" rx="3" fill="#777"/>'
-    + '<rect x="37" y="12" width="7" height="7" rx="2" fill="#bbb"/>'
-    + '<rect x="20" y="32" width="7" height="22" rx="3" fill="#777" transform="rotate(-22 23.5 43)"/>'
-    + '<rect x="53" y="32" width="7" height="22" rx="3" fill="#777" transform="rotate(22 56.5 43)"/>'
-    + '<text x="40" y="56" text-anchor="middle" font-size="8" fill="#bbb" font-family="Arial" font-weight="700">GB</text>'
-    + '<rect x="34" y="60" width="12" height="12" rx="4" fill="#999"/>'
-    + '<path d="M34 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
-    + '<path d="M46 72 Q40 84 40 86" stroke="#666" stroke-width="7" stroke-linecap="round" fill="none"/>'
+  // CN (Type I GB) — китайская: 2 плоских штырька под углом 40° + заземление (угол острее AU)
+  cn: '<svg viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">'
+    + '<rect x="10" y="6" width="140" height="108" rx="18" fill="#d0d0d0" stroke="#909090" stroke-width="3"/>'
+    + '<rect x="18" y="14" width="124" height="92" rx="13" fill="#f2f2f2" stroke="#c0c0c0" stroke-width="2"/>'
+    + '<rect x="38" y="22" width="14" height="34" rx="5" fill="#2a2a2a" transform="rotate(-40 45 39)"/>'
+    + '<rect x="108" y="22" width="14" height="34" rx="5" fill="#2a2a2a" transform="rotate(40 115 39)"/>'
+    + '<rect x="73" y="66" width="14" height="26" rx="5" fill="#2a2a2a"/>'
+    + '<ellipse cx="80" cy="162" rx="46" ry="26" fill="#d0d0d0" stroke="#909090" stroke-width="2.5"/>'
+    + '<ellipse cx="80" cy="160" rx="40" ry="20" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1.5"/>'
+    + '<rect x="38" y="116" width="12" height="38" rx="4" fill="#a8a8a8" stroke="#808080" stroke-width="1.5" transform="rotate(-35 44 135)"/>'
+    + '<rect x="110" y="116" width="12" height="38" rx="4" fill="#a8a8a8" stroke="#808080" stroke-width="1.5" transform="rotate(35 116 135)"/>'
+    + '<rect x="74" y="132" width="12" height="28" rx="4" fill="#a8a8a8" stroke="#808080" stroke-width="1.5"/>'
     + '</svg>'
 };
 
